@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+}
+.one{
+    background-color: #ff5722;
+    width: 150px;
+    color: white;
+    padding: 20px;
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+}
+.one::before,
+.one::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5722;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.one::before{
+    transform: skew(10deg, 10deg);
+}
+.one::after{
+    transform: skew(-10deg, -10deg);
+}
+.two{
+    background-color: #009688;
+    color: white;
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+}
+.two::before{
+    content: "";
+    background-color: #009688;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: skew(20deg);
+    top: 0;
+    left: -15px;
+    z-index: -1;
+}
+.two::after{
+    content: "";
+    background-color: #009688;
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    transform: skew(20deg);
+    top: 0;
+    left: -50px;
+}
+/* .class {
+    matrix(3, 0.2679, 0, 3, 20, 100);
+    scaleX(3)
+    skewY (0.2679)
+    skewX (0)
+    scaleY(3)
+    translateX(20)
+    translateY(100)
+} */
+.three{
+    width: 200px;
+    height: 200px;
+    background-color: #607d8b;
+    margin: 100px auto;
+    position: relative;
+    border-bottom: 5px solid black;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+}
+.three::before{
+    content: "";
+    position: absolute;
+    width: 69%;
+    height: 69%;
+    background-color: black;
+    transform: rotate(44.5deg);
+    top: -69px;
+    left: 29px;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+}
+.three::after{
+    content: "Elzero";
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.box{
+    perspective: 400px;
+}
+.four{
+    height: 200px;
+    width: 200px;
+    margin: 20px auto;
+    position: relative;
+    font-size: 30px;
+    color: white;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+.four::before{
+    content: "Front";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fa3664;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.four::after{
+    content: "Back";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1692fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.four:hover{
+    transform: rotateY(-180deg);
+}
